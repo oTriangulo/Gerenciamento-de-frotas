@@ -4,7 +4,7 @@ public final class Moto extends Veiculo{
 
     @Override
     public String toString() {
-        var partida = this.getPartidaEletrica() ? "Sim" : "Não";
+        String partida = this.getPartidaEletrica() ? "Sim" : "Não";
         return "Veículo: " + this.getMarca()
             + " " + this.getModelo()
             + " " + this.getAno()
