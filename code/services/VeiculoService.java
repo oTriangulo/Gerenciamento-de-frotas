@@ -29,11 +29,14 @@ public class VeiculoService { // Serviço de veiculos no sistema de frotas usado
     }
 
     public Veiculo save(Veiculo veiculo) throws Exception { // Cadastra um novo veículo no sistema de frotas
-        if (veiculo == null) // Verifica se o veículo é nulo e lança uma exceção
-            throw new Exception("Objeto nullo"); // excesão caso o veículo seja nulo
+        if (veiculo == null || veiculo.getPlaca() == null || veiculo.getPlaca().isEmpty() || veiculo.getAno() == 0 || veiculo.getModelo() == null || veiculo.getModelo().isEmpty() || veiculo.getMarca() == null || veiculo.getMarca().isEmpty()) // Verifica se o veículo é nulo e lança uma exceção
+            throw new Exception("Erro ao cadastrar veículo"); // excesão caso o veículo seja nulo
         if (veiculo.getModelo() == null || veiculo.getModelo().isEmpty()) // Verifica se o campo modelo é vazio e lança uma exceção
             throw new Exception("Campo Modelo não pode ser em branco"); // excesão caso o campo modelo seja vazio
         veiculosDB.add(veiculo); // Adiciona um novo veículo na lista de veículos no sistema de frotas caso o veículo não seja nulo
         return veiculo; // Retorna o veículo
     } 
 }
+
+// nao aguento mais
+// para colocar o ponteiro de resposta do lado, é só colocar o input dentro do sysout :D
